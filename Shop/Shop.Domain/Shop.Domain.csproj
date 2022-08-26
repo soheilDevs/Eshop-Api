@@ -11,6 +11,8 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="OrderAgg\Events\" />
+    <Folder Include="OrderAgg\ValueObject\" />
     <Folder Include="UserAgg\Services\" />
   </ItemGroup>
 

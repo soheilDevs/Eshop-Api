@@ -7,7 +7,6 @@ namespace Shop.Domain.UserAgg;
 
 public class UserAddress : BaseEntity
 {
-    public long UserId { get; internal set; }
 
     public UserAddress(string shire, string city, string postalCode, string postalAddress, string phoneNumber, string name, string family, string nationalCode)
     {
@@ -22,6 +21,7 @@ public class UserAddress : BaseEntity
         NationalCode = nationalCode;
         ActiveAddress = false;
     }
+    public long UserId { get; internal set; }
     public string Shire { get; private set; }
     public string City { get; private set; }
     public string PostalCode { get; private set; }
