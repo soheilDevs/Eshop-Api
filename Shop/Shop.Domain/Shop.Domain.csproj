@@ -11,9 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="SellerAgg\" />
+    <Folder Include="CategoryAgg\Services\" />
+    <Folder Include="CommentAgg\" />
+    <Folder Include="OrderAgg\Repository\" />
+    <Folder Include="ProductAgg\Repository\" />
+    <Folder Include="SellerAgg\Repository\" />
     <Folder Include="OrderAgg\Events\" />
     <Folder Include="OrderAgg\ValueObject\" />
+    <Folder Include="SiteEntities\Repositories\" />
+    <Folder Include="UserAgg\Repository\" />
     <Folder Include="UserAgg\Services\" />
   </ItemGroup>
 
