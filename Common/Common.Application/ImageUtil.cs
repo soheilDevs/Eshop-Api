@@ -2,6 +2,8 @@
 using System.Drawing.Drawing2D;
 using System.Drawing.Imaging;
 using Encoder = System.Text.Encoder;
+using System.IO;
+using System.Linq;
 
 namespace Common.Application;
 
@@ -14,16 +16,13 @@ public static class ImageConvertor
     /// <param name="outputPath">مسیری که قراره فایل بیت مپ ذخیره شود </param>
     /// <param name="newWidth">عرض عکس</param>
     /// <param name="new_height">ارتفاع عکس</param>
-    ///
+
 
     public static void CreateBitMap(string inputImagePath, string outputPath, int newWidth, int new_height)
     {
 
-        var inputDirectory =
-            Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot{inputImagePath.Replace("/", "\\")}");
-
+        var inputDirectory = Path.Combine(Directory.GetCurrentDirectory(), $"wwwroot{inputImagePath.Replace("/", "\\")}");
         #region OutPut
-
         var pathSplit = inputImagePath.Split('/');
         var imageName = pathSplit[^1];
 
@@ -33,12 +32,12 @@ public static class ImageConvertor
             //Create Folder
             Directory.CreateDirectory(folderName);
         }
-
         var outputDirectory = Path.Combine(folderName, imageName);
 
         #endregion
         Image_resize(inputDirectory, outputDirectory, newWidth, new_height);
     }
+
     private static void Image_resize(string input_Image_Path, string output_Image_Path, int new_Width, int new_Height)
     {
         const long quality = 50L;
@@ -60,6 +59,7 @@ public static class ImageConvertor
 
             using (var output = System.IO.File.Open(output_Image_Path, FileMode.Create))
             {
+
                 var qualityParamId = System.Drawing.Imaging.Encoder.Quality;
 
                 var encoderParameters = new EncoderParameters(1);
@@ -77,6 +77,7 @@ public static class ImageConvertor
         }
         source_Bitmap.Dispose();
     }
+
     #region CompresImage
     /// <summary>
     /// 
@@ -113,8 +114,4 @@ public static class ImageConvertor
         return null;
     }
     #endregion
-
-
-
-
 }

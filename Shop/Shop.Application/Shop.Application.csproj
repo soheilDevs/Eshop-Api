@@ -8,7 +8,6 @@
 
   <ItemGroup>
     <Folder Include="Categories\AddChild\" />
-    <Folder Include="Categories\Edit\" />
     <Folder Include="Categories\Create\" />
     <Folder Include="Comments\ChangeStatus\" />
     <Folder Include="Comments\Edit\" />
@@ -39,6 +38,11 @@
     <Folder Include="Users\Register\" />
     <Folder Include="Users\ChargeWallet\" />
     <Folder Include="Users\AddAddress\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Common\Common.Application\Common.Application.csproj" />
+    <ProjectReference Include="..\Shop.Domain\Shop.Domain.csproj" />
   </ItemGroup>
 
 </Project>
